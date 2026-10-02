@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-02",
+  "version": "3.3.0",
+  "source_repository": "RickyyyFu/GammaLens",
+  "source_branch": "feat/equity-research-skills-v1",
+  "source_commit": "2c2de5790f93a698b25b31660bc5c5fe1ea97dbe",
+  "source_directory": "skills/single-stock-deep-research",
+  "source_files": [
+    {
+      "path": "assets/completeness-checklist.md",
+      "source_sha256": "9012945a5bb9aafee0f528668ff5046912d171eb8918c2a3e4c3c557b55d3563",
+      "migrated_sha256": "9012945a5bb9aafee0f528668ff5046912d171eb8918c2a3e4c3c557b55d3563",
+      "modified": false
+    },
+    {
+      "path": "assets/config.example.json",
+      "source_sha256": "24717f895bb0e57f1fd043eb1b50b417031ebed9c45df128c750a8e00647d62c",
+      "migrated_sha256": "24717f895bb0e57f1fd043eb1b50b417031ebed9c45df128c750a8e00647d62c",
+      "modified": false
+    },
+    {
+      "path": "assets/evidence-ledger.example.json",
+      "source_sha256": "799fc71845f6d1cfdfe896d8a4b83bafe3eeabce595087c2df0d2accee32e231",
+      "migrated_sha256": "799fc71845f6d1cfdfe896d8a4b83bafe3eeabce595087c2df0d2accee32e231",
+      "modified": false
+    },
+    {
+      "path": "assets/positioning-risk-card.md",
+      "source_sha256": "77b5e3d8bec3aefabf0393afeae6f05b61f809a0c1706704e6912fc22c53b22a",
+      "migrated_sha256": "77b5e3d8bec3aefabf0393afeae6f05b61f809a0c1706704e6912fc22c53b22a",
+      "modified": false
+    },
+    {
+      "path": "assets/report-template.md",
+      "source_sha256": "4eb8433c47bdfa9917cc8ce362bc8b3d57ed328e6e08f539a1eebd26c92683c5",
+      "migrated_sha256": "4eb8433c47bdfa9917cc8ce362bc8b3d57ed328e6e08f539a1eebd26c92683c5",
+      "modified": false
+    },
+    {
+      "path": "CHANGELOG.md",
+      "source_sha256": "a7ec8cb2f9a05facde2602216b0cc61eefab96a8e332db8dcf245fa73d5103de",
+      "migrated_sha256": "620dd8a31fabf679aaf2e2a046ffc0bbcb31d189ff8856e84832cdedf476d2a3",
+      "modified": true
+    },
+    {
+      "path": "MIGRATION.md",
+      "source_sha256": "a77f661e6bf68110952300337a3d77bb2fe395ffc168482dcc7f0eec0a28174e",
+      "migrated_sha256": "bd1c750d2ba8d87fc5ae07527013e502941aaece54eba05471cb32e0091784d4",
+      "modified": true
+    },
+    {
+      "path": "README.en.md",
+      "source_sha256": "6b0454da021e76e084922fe28f52c95cb7009df5803f892162654139d82d0bd5",
+      "migrated_sha256": "5aea37c26b0cd6d88a43215f1241f050fd72855321e0af981b5bff974e12f839",
+      "modified": true
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "723efe7a52f902e636cf2e291e6c441cc3dafcf60545d4c52e8613b1b3bdbaad",
+      "migrated_sha256": "b6403f14fc0e9cf643cdb181ed7d1127637bc6664ba51cda81bba3572f026efa",
+      "modified": true
+    },
+    {
+      "path": "references/01-data-integrity.md",
+      "source_sha256": "a10741132c9abbeff9e6bc8cfda389c6b5dcfb22060b34c1c0ec028aee348b4e",
+      "migrated_sha256": "a10741132c9abbeff9e6bc8cfda389c6b5dcfb22060b34c1c0ec028aee348b4e",
+      "modified": false
+    },
+    {
+      "path": "references/02-mao-research.md",
+      "source_sha256": "97bb9536c774b01cf788bdb8cc9a86ba3b66bc46d1fc67332a5b0561f3ac3dd1",
+      "migrated_sha256": "97bb9536c774b01cf788bdb8cc9a86ba3b66bc46d1fc67332a5b0561f3ac3dd1",
+      "modified": false
+    },
+    {
+      "path": "references/03-financials-moat.md",
+      "source_sha256": "9cf36555b45fa71d6bee28174e5448a648dacf6d10c2e8e38a3194ea4e356187",
+      "migrated_sha256": "9cf36555b45fa71d6bee28174e5448a648dacf6d10c2e8e38a3194ea4e356187",
+      "modified": false
+    },
+    {
+      "path": "references/04-valuation.md",
+      "source_sha256": "7d0f7fa8f67216ac60d2d3e7cf10e22139e99736c533c04b15ab983bc5b7fc2c",
+      "migrated_sha256": "7d0f7fa8f67216ac60d2d3e7cf10e22139e99736c533c04b15ab983bc5b7fc2c",
+      "modified": false
+    },
+    {
+      "path": "references/04b-transition-strategic-asset.md",
+      "source_sha256": "1dc9ab029ca32ee9d90a82cadf7712599ed2a8f6dfe663fcb6a1d5188b97e0aa",
+      "migrated_sha256": "1dc9ab029ca32ee9d90a82cadf7712599ed2a8f6dfe663fcb6a1d5188b97e0aa",
+      "modified": false
+    },
+    {
+      "path": "references/05-events.md",
+      "source_sha256": "a61793964f23d2415150b939dc23141c3423b77c1156c54f404bb141c926947f",
+      "migrated_sha256": "a61793964f23d2415150b939dc23141c3423b77c1156c54f404bb141c926947f",
+      "modified": false
+    },
+    {
+      "path": "references/06-positioning-crowding.md",
+      "source_sha256": "7e9893420c979d7501660a05db368845f8295c05d56a93a8a49aa7c640e6bc0b",
+      "migrated_sha256": "7e9893420c979d7501660a05db368845f8295c05d56a93a8a49aa7c640e6bc0b",
+      "modified": false
+    },
+    {
+      "path": "references/07-technical.md",
+      "source_sha256": "fae180e1ddff63b3119b234b2575b43866e4c2ad53c7a9f233e8697be20e9a31",
+      "migrated_sha256": "fae180e1ddff63b3119b234b2575b43866e4c2ad53c7a9f233e8697be20e9a31",
+      "modified": false
+    },
+    {
+      "path": "references/08-risk-options.md",
+      "source_sha256": "ec6258d0f72e1d2ff6bc11fbf6bb8484f885cd899f0eef1fb6ed4bbecc5fd1ea",
+      "migrated_sha256": "ec6258d0f72e1d2ff6bc11fbf6bb8484f885cd899f0eef1fb6ed4bbecc5fd1ea",
+      "modified": false
+    },
+    {
+      "path": "references/09-review.md",
+      "source_sha256": "fb7f2f772a3ac67aa7b7578390fae0ce3a84229fab3ce5299213d225a31f422a",
+      "migrated_sha256": "fb7f2f772a3ac67aa7b7578390fae0ce3a84229fab3ce5299213d225a31f422a",
+      "modified": false
+    },
+    {
+      "path": "references/10-industry.md",
+      "source_sha256": "221aba5f2770f051b3b3bb10b25447b5be5552daf2da1d042040f95707320c14",
+      "migrated_sha256": "221aba5f2770f051b3b3bb10b25447b5be5552daf2da1d042040f95707320c14",
+      "modified": false
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "source_sha256": "e866dae2cd9ce2dbc98a5d5c28e3da866f0188e741179f0445210ada80ec6001",
+      "migrated_sha256": "e866dae2cd9ce2dbc98a5d5c28e3da866f0188e741179f0445210ada80ec6001",
+      "modified": false
+    },
+    {
+      "path": "SKILL.md",
+      "source_sha256": "b9a527c9fd366175c5ffa7ea35f76dbcbf47cf3a81e61ea31a926130a73583a3",
+      "migrated_sha256": "b9a527c9fd366175c5ffa7ea35f76dbcbf47cf3a81e61ea31a926130a73583a3",
+      "modified": false
+    },
+    {
+      "path": "tests/test-results.txt",
+      "source_sha256": "d73448bbe119d8c582b664d3827e8b9612ea0348a106b7bc3a7f9274b4e24b39",
+      "migrated_sha256": "d73448bbe119d8c582b664d3827e8b9612ea0348a106b7bc3a7f9274b4e24b39",
+      "modified": false
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "source_sha256": "80a5ea8a3ad57104a2e83604ccface32550dbcebb69d722b49f63f669738b2b0",
+      "migrated_sha256": "80a5ea8a3ad57104a2e83604ccface32550dbcebb69d722b49f63f669738b2b0",
+      "modified": false
+    },
+    {
+      "path": "tests/test_transition.py",
+      "source_sha256": "fb27b477596a90eeffbbf21be11be2d7b0d62c37a65cbeae85eb219bfba739ba",
+      "migrated_sha256": "fb27b477596a90eeffbbf21be11be2d7b0d62c37a65cbeae85eb219bfba739ba",
+      "modified": false
+    },
+    {
+      "path": "tests/validation-results.txt",
+      "source_sha256": "9c5b11c510b8fb5a442c49e0fa0d8f74c03e8308709f98991371ee96fec7e7fb",
+      "migrated_sha256": "9c5b11c510b8fb5a442c49e0fa0d8f74c03e8308709f98991371ee96fec7e7fb",
+      "modified": false
+    },
+    {
+      "path": "VALIDATION.md",
+      "source_sha256": "1b0b77de279e943745030c3e2d7251032328758368a297b5d454320a8445edaa",
+      "migrated_sha256": "85102ef13dffa89874a4471fa2b0ab6d56f5f9b58fd3321a00f6d3a649a31e41",
+      "modified": true
+    }
+  ]
+}
