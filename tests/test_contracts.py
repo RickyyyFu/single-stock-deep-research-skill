@@ -13,4 +13,8 @@ class Contracts(unittest.TestCase):
     def test_crowding_not_intrinsic(self): self.assertIn('不会因为Short Interest高就自动提高内在价值',TEXT)
     def test_call_oi_not_proof(self): self.assertIn('Call OI',TEXT); self.assertIn('不证明',TEXT)
     def test_short_volume_not_float(self): self.assertIn('55%的float被做空',TEXT)
+    def test_dmi_direction_strength_split(self): self.assertIn('+DI > -DI',TEXT); self.assertIn('-DI > +DI',TEXT); self.assertIn('ADX',TEXT)
+    def test_adx_not_direction(self): self.assertIn('ADX上升不等于上涨',TEXT)
+    def test_dmi_not_standalone_signal(self): self.assertIn('DMI交叉不得单独触发买卖',TEXT)
+    def test_dmi_default_period(self): self.assertIn('默认使用14周期',TEXT)
 if __name__=='__main__': unittest.main()

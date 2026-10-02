@@ -3,13 +3,13 @@ name: single-stock-deep-research
 description: "当用户给定一个公司/股票代码或明确小清单时，逐家完整研究主要矛盾、五年财务、护城河、估值、状态跃迁/战略资产、催化、Positioning/Crowding/Squeeze、技术与条件式操作。默认不扫描市场、不做买入排名。"
 compatibility: "中文Markdown；真实财报、行情、Short Interest、借券和期权依赖宿主已授权来源。无券商连接、自动交易或后台服务。"
 metadata:
-  version: "3.3.0"
-  shared_rules_version: "1.1.0"
+  version: "3.4.0"
+  shared_rules_version: "1.2.0"
   language: "zh-CN"
   updated: "2026-10-02"
 ---
 
-# 单标的深度研究 v3.3.0
+# 单标的深度研究 v3.4.0
 
 ## 默认任务
 只给代码即执行完整研究；明确小清单则按输入顺序逐家独立报告，不排名。同行只用于比较。
@@ -26,10 +26,11 @@ metadata:
 
 ## 关键禁区
 - Short Interest与daily short volume绝不混用；高SI不等于正在轧空。
+- DMI作为技术确认层：+DI/-DI描述方向，ADX描述趋势强度；ADX上升不等于上涨，DMI交叉不得单独触发买卖，必须与MA20/40、价格结构和量能交叉验证。
 - 13F不代表实时净敞口；GEX不代表dealer真实账本；Call OI不证明新开看多。
 - 拥挤度只改变路径风险、波动、事件管理与执行条件，不自动改DCF/长期利润率。
 - Transition公司的真实融资价/内部人买入/战略投资是交易锚，不是硬底；DCF冲突时必须Model Conflict Review。
 - 期权1−Delta不是亏损概率；提前退出按价格×时间×IV，不套到期内在价值。
 
 ## 输出结构
-使用`assets/report-template.md`的0—13节及7A/8A扩展；第一屏和末尾给当前价/时点、预测日、三情景、主要矛盾、Transition状态（如有）、Crowding状态、技术状态、行动条件和最强反证。
+使用`assets/report-template.md`的0—13节及7A/8A扩展；第一屏和末尾给当前价/时点、预测日、三情景、主要矛盾、Transition状态（如有）、Crowding状态、技术状态（含DMI方向/ADX强度，若数据可得）、行动条件和最强反证。

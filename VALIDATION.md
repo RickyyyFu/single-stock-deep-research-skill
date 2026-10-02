@@ -1,9 +1,9 @@
-# 验证说明 · single-stock-deep-research v3.3.0
+# 验证说明 · single-stock-deep-research v3.4.0
 
 构建日期：2026-10-02。
 
 ## 已执行
-- Python unittest合同测试：见`tests/test_contracts.py`，验证Short Interest/Short Volume区分、13F滞后、GEX假设、Fuel≠Trigger、two-sided crowding、long-unwind、缺失数据降级，以及产品职责边界。
+- Python unittest合同测试：见`tests/test_contracts.py`，验证Short Interest/Short Volume区分、13F滞后、GEX假设、Fuel≠Trigger、two-sided crowding、long-unwind、缺失数据降级，以及DMI方向/ADX强度分离、ADX上升≠上涨、DMI交叉非独立信号等产品职责边界。
 - `scripts/validate_bundle.py`检查必需文件、版本、内部关键字和ZIP前目录结构。
 - SHA256清单用于构建一致性。
 

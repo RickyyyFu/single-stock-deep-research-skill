@@ -1,4 +1,4 @@
-# Single-stock deep research · v3.3.0
+# Single-stock deep research · v3.4.0
 
 Updated: 2026-10-02. Independently maintained. [中文](README.md)
 
@@ -21,7 +21,9 @@ Example request:
 Read [SKILL.md](SKILL.md) and required references, then use the assets templates. Adapt `assets/config.example.json` and `assets/evidence-ledger.example.json` in a working copy; examples are not market data. The host supplies authorized sources.
 
 ## Methodology
-Company-type routing → facts and key contradictions → five-year financials and moat → valuation and three scenarios → catalysts → two-sided crowding → technical and conditional actions. Transition/strategic assets add SOTP, Growth vs Maintenance CapEx, State Tree, Transaction Anchor, Real Option and Model Conflict Review.
+Company-type routing → facts and key contradictions → five-year financials and moat → valuation and three scenarios → catalysts → two-sided crowding → technical and conditional actions (including DMI/ADX confirmation). Transition/strategic assets add SOTP, Growth vs Maintenance CapEx, State Tree, Transaction Anchor, Real Option and Model Conflict Review.
+
+DMI/ADX is a technical confirmation layer: +DI/-DI describe direction while ADX describes strength. Rising ADX does not mean price is rising, and DI crossovers are never standalone trade signals.
 
 Positioning / Crowding / Squeeze is a path-risk overlay, not a replacement for quality or valuation. High SI is Fuel, not automatically a Trigger or buy ranking. Record sources, timestamps, counterevidence, triggers and invalidation conditions.
 
@@ -44,7 +46,7 @@ MIGRATION-PROVENANCE.json # 来源文件校验与修改记录 / provenance
 ```
 
 ## Version maintenance
-Default branch: `main`. Use independent semantic versions; synchronize SKILL.md metadata, README, CHANGELOG and MIGRATION when changing versions. Review changes through branches and PRs; after validation, tag the intended commit with `vX.Y.Z` and publish a Release. Do not casually move published tags. `shared_rules_version` labels bundled rules, not an external runtime dependency. This migration preserves v3.3.0 and the 2026-10-02 rule update date.
+Default branch: `main`. Use independent semantic versions; synchronize SKILL.md metadata, README, CHANGELOG and MIGRATION when changing versions. Review changes through branches and PRs; after validation, tag the intended commit with `vX.Y.Z` and publish a Release. Do not casually move published tags. `shared_rules_version` labels bundled rules, not an external runtime dependency. This migration preserves v3.4.0 and the 2026-10-02 rule update date.
 
 ## Tests
 Python 3; standard library only. Run from repository root:
