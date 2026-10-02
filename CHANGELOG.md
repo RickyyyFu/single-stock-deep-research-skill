@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 3.4.0 · 2026-10-02
+- 新增DMI/ADX趋势确认层：默认14周期，+DI/-DI判方向，ADX判趋势强度。
+- 强制区分方向与强度：ADX上升不等于上涨；-DI占优且ADX上升代表空头趋势增强。
+- DMI交叉不得单独触发买卖，必须与MA20/40、价格结构和量能交叉验证。
+- 完整报告技术章节、配置、完整性检查、validator与合同测试同步加入DMI规则。
+- DMI只调整技术确认度与执行条件，不替代主要矛盾、估值、催化或Positioning。
+
 ## 3.3.0 · 2026-10-02
 - 合并状态跃迁/战略资产估值：企业类型路由、SOTP、Growth/Maintenance CapEx、利用率、Normalized Earnings、State Tree、Real Option、Transaction Anchors、Model Conflict Review、Milestones。
 - 新增Positioning/Crowding/Squeeze：Short squeeze、Long unwind/多杀多、two-sided crowding、borrow/float/options/supply/catalyst。
