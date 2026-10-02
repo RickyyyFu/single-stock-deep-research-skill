@@ -1,5 +1,5 @@
 {
-  "version": "3.3.0",
+  "version": "3.4.0",
   "skill_name": "single-stock-deep-research",
   "enterprise_type": null,
   "transition": {
@@ -25,5 +25,20 @@
     "approved_by_user": false,
     "account_nav": null,
     "risk_fraction": null
+  },
+  "technical": {
+    "dmi_enabled": true,
+    "dmi_period": 14,
+    "adx_bands": {
+      "weak_below": 20,
+      "emerging_from": 20,
+      "trending_from": 25,
+      "strong_above": 40
+    },
+    "direction_from_di": true,
+    "adx_direction_neutral": true,
+    "crossover_is_standalone_signal": false,
+    "require_ma_structure_volume_confirmation": true,
+    "missing_data": "UNKNOWN"
   }
 }
