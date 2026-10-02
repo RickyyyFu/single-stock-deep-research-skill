@@ -1,4 +1,4 @@
-# 完整性检查 · v3.3
+# 完整性检查 · v3.4
 - [ ] FACT/GUIDANCE/CONSENSUS/MODEL/INFERENCE/UNKNOWN分开
 - [ ] 1—3项主要矛盾及转变条件
 - [ ] 五年财务、最新季度/TTM与资本质量
@@ -12,5 +12,8 @@
 - [ ] Squeeze Fuel≠Trigger；Long unwind/two-sided允许
 - [ ] 拥挤度没有无依据改DCF
 - [ ] 技术状态/关键位与内在价值分开
+- [ ] DMI若使用，记录参数、+DI、-DI、ADX与数据时点
+- [ ] +DI/-DI只解释方向，ADX只解释强度；ADX上升未被误写成上涨
+- [ ] DMI交叉未单独触发买卖，已与MA20/40、价格结构和量能交叉验证
 - [ ] 期权如请求：价格×时间×IV，1−Delta禁用
 - [ ] 最终预测日期/三情景与反证
