@@ -7,6 +7,21 @@ Research each specified company independently: key contradictions, five-year fin
 
 No default market-wide scan or buy ranking. Small lists are researched in input order; peers are comparisons. The screening skill is not required.
 
+## Use a ZIP package (no Git required)
+
+1. [Download the ZIP package](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/main.zip), or select **Code → Download ZIP** on the repository page.
+2. Upload it to an agent that can extract ZIP archives and read the bundled files.
+3. Paste this instruction and replace the task at the end:
+
+```text
+Extract the uploaded skill archive, find and read its root SKILL.md, and confirm the skill name is single-stock-deep-research. Read the references required by the entry point and use the assets templates to complete the task. First confirm that you can access the bundled files; explicitly report any extraction or reading limitation. Mark missing data UNKNOWN/LIMITED and do not invent data.
+Task: Run complete single-stock research for AAPL with data timestamps, key contradictions, three scenarios, crowding, action conditions and strongest counterevidence.
+```
+
+If the agent cannot extract ZIP files, extract locally and upload the complete folder where supported, or use the platform's local skill loading mechanism. The GitHub download folder is usually `single-stock-deep-research-skill-main`; rename it to `single-stock-deep-research` if the platform requires the folder to match the skill name. Preserve all files and relative paths.
+
+An attachment lets the agent follow the bundled rules for the current task; it does not necessarily install a persistent skill. Live research requires web access, authorized data sources, or user-provided data. The package includes no market data service, credentials, or subscription.
+
 ## Installation
 ```sh
 git clone https://github.com/RickyyyFu/single-stock-deep-research-skill.git single-stock-deep-research

@@ -7,6 +7,21 @@
 
 默认不扫描全市场、不做买入排名；小清单按输入顺序逐家报告，同行只用于比较。无需安装筛选 Skill。
 
+## 压缩包使用（无需 Git）
+
+1. 点击 [下载 ZIP 压缩包](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/main.zip)，保存到本地；也可以在仓库页面选择 **Code → Download ZIP**。
+2. 将 ZIP 上传给支持解压和读取包内文件的 Agent。
+3. 复制下面的启动指令，并替换最后的任务内容：
+
+```text
+请解压我上传的技能压缩包，找到并读取根目录的 SKILL.md，确认技能名称为 single-stock-deep-research。按入口要求读取 references 中的相关规则，并使用 assets 中的模板完成任务。先确认能访问包内文件；无法解压或读取时请明确告知。缺失数据标记 UNKNOWN/LIMITED，不编造数据。
+任务：对 AAPL 执行完整单标的研究，标注所有数据时点、主要矛盾、三情景、拥挤度、行动条件和最强反证。
+```
+
+若 Agent 无法解压 ZIP，请在本地解压后，上传完整文件夹（平台支持时），或通过平台的本地 Skill 加载方式使用。GitHub 下载的目录通常名为 `single-stock-deep-research-skill-main`；若平台要求文件夹名与技能名一致，将其改为 `single-stock-deep-research`，并保留全部文件和相对路径。
+
+上传附件用于当前任务按包内规则执行，不一定会自动安装为长期可调用的技能。实时研究需要 Agent 能联网检索、访问已授权数据源，或读取用户提供的数据；压缩包不含行情服务、账户凭证或数据订阅。
+
 ## 安装
 ```sh
 git clone https://github.com/RickyyyFu/single-stock-deep-research-skill.git single-stock-deep-research
