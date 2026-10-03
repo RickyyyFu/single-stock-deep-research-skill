@@ -9,7 +9,7 @@ No default market-wide scan or buy ranking. Small lists are researched in input 
 
 ## Use a ZIP package (no Git required)
 
-1. [Download the ZIP package](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/main.zip), or select **Code → Download ZIP** on the repository page.
+1. [Download the ZIP package](downloads/single-stock-deep-research-v3.4.0.zip?raw=true), or select **Code → Download ZIP** on the repository page.
 2. Upload it to an agent that can extract ZIP archives and read the bundled files.
 3. Paste this instruction and replace the task at the end:
 
@@ -73,3 +73,9 @@ Recorded output: `tests/migration-test-results.txt` and `tests/migration-validat
 
 ## Provenance
 Complete directory copied from [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research), branch `feat/equity-research-skills-v1`, commit `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe`, into the new repository root. All source files remain present; READMEs are expanded and migration records and CI are added. See [MIGRATION.md](MIGRATION.md) and MIGRATION-PROVENANCE.json. GammaLens remains unchanged.
+
+## Maintaining versioned ZIP packages
+
+`downloads/` stores standalone versioned skill ZIPs. The initial package uses the existing skill version. When bundled rules, templates, scripts, or documentation change, bump the version in SKILL.md and synchronize both READMEs, CHANGELOG, and MIGRATION. Update both download links, run `python scripts/validate_bundle.py`, then `python scripts/package_skill.py` from the repository root. Commit the new ZIP with the source and documentation, and verify its download link and extracted contents.
+
+Published ZIPs are immutable: retain historical versions and never overwrite an existing version with different content. The packaging script verifies every bundled file and rejects conflicting same-version packages. Include no private data, credentials, or generated research results.

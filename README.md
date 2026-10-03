@@ -9,7 +9,7 @@
 
 ## 压缩包使用（无需 Git）
 
-1. 点击 [下载 ZIP 压缩包](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/main.zip)，保存到本地；也可以在仓库页面选择 **Code → Download ZIP**。
+1. 点击 [下载 ZIP 压缩包](downloads/single-stock-deep-research-v3.4.0.zip?raw=true)，保存到本地（当前版本）；**Code → Download ZIP** 可下载完整仓库。
 2. 将 ZIP 上传给支持解压和读取包内文件的 Agent。
 3. 复制下面的启动指令，并替换最后的任务内容：
 
@@ -73,3 +73,14 @@ python scripts/validate_bundle.py
 
 ## 迁移来源
 从 [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research) 的 `feat/equity-research-skills-v1` 分支、提交 `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe` 复制完整目录到仓库根目录。原文件全部保留，README 扩充，迁移记录和 CI 新增；详见 [MIGRATION.md](MIGRATION.md) 和来源校验清单。GammaLens 未修改。
+
+## 维护版本压缩包
+
+仓库的 `downloads/` 保存带版本号的独立技能 ZIP，README 链接指向当前版本。首次打包使用现有技能版本；技能规则、模板、脚本或随包文档更新后，必须递增版本并重新打包新的 ZIP。
+
+1. 同步 `SKILL.md` 的 `metadata.version`、中英文 README、CHANGELOG 和 MIGRATION，记录更新内容。
+2. 更新两个 README 的 ZIP 下载链接到新版本文件名。
+3. 从仓库根目录运行 `python scripts/validate_bundle.py`，然后运行 `python scripts/package_skill.py`。打包脚本读取 SKILL.md 版本，保留完整相对路径并逐文件验证 ZIP。
+4. 将新版 ZIP 与技能源文件、文档一起提交。发布前确认下载链接可用，解压后的入口、参考规则、模板和版本一致。
+
+已发布的版本 ZIP 不得用不同内容覆盖；需要修改时发布新版本。脚本遇到同名但内容不同的包会报错，避免旧下载链接悄悄改变。历史版本保留在 `downloads/`，不包含私人数据、凭证或生成的研究结果。
