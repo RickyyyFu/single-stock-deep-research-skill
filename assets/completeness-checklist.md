@@ -1,19 +1,21 @@
-# 完整性检查 · v3.4
-- [ ] FACT/GUIDANCE/CONSENSUS/MODEL/INFERENCE/UNKNOWN分开
-- [ ] 1—3项主要矛盾及转变条件
-- [ ] 五年财务、最新季度/TTM与资本质量
-- [ ] 护城河证据和反证
-- [ ] Forward PE/PEG适用性、内在模型、反向估值、三情景、敏感性
-- [ ] 企业类型路由；Transition触发时完成SOTP/CapEx拆分/状态树/交易锚/冲突复核
-- [ ] 催化阶段没有越级
-- [ ] Positioning Risk Card
-- [ ] Short Interest≠Short Volume；SI日期、DTC窗口（若有）
-- [ ] 13F滞后，GEX非dealer账本
-- [ ] Squeeze Fuel≠Trigger；Long unwind/two-sided允许
-- [ ] 拥挤度没有无依据改DCF
-- [ ] 技术状态/关键位与内在价值分开
-- [ ] DMI若使用，记录参数、+DI、-DI、ADX与数据时点
-- [ ] +DI/-DI只解释方向，ADX只解释强度；ADX上升未被误写成上涨
-- [ ] DMI交叉未单独触发买卖，已与MA20/40、价格结构和量能交叉验证
-- [ ] 期权如请求：价格×时间×IV，1−Delta禁用
-- [ ] 最终预测日期/三情景与反证
+# 完整性检查 · v3.5.0
+- [ ] FACT/GUIDANCE/CONSENSUS/MODEL/INFERENCE/UNKNOWN与核验状态分开；SIMULATION未混入事实
+- [ ] 研究截止、时区、价格市场阶段/延迟、来源首次披露与股本口径
+- [ ] 1—3项主要矛盾及反证/转变条件；五年财务、最新季度/TTM与资本质量
+- [ ] 护城河证据；Forward PE/PEG适用性、DCF/适配模型、反向估值与模型冲突
+- [ ] 企业类型路由；Transition时SOTP/CapEx/状态树/交易锚与经济权益股本
+- [ ] 催化没有越级；假设事件发生不被当成发生概率
+- [ ] Positioning Risk Card；Short Interest≠Short Volume、13F滞后、GEX非dealer账本
+- [ ] Squeeze Fuel≠Trigger；Long unwind/two-sided允许；拥挤不无依据改DCF
+- [ ] 三情景给日期、前提、约束/响应、变量、资本桥接、中心价、范围性质、触发/失效
+- [ ] 至少一组不扩倍数；经营改善但每股价值下降压力测试（适用时）
+- [ ] 当前内在价值≠未来目标日价格≠技术位；无虚构每日路径
+- [ ] 季度/年度、EPS/PE期间与GAAP/调整后匹配；计量单位明确
+- [ ] 融资现金与股数同算；无重复稀释/净债务/现金消耗/少数权益
+- [ ] 数字有evidence_ids和理由；未定价风险分支不删除；缺失只局部阻断
+- [ ] 模拟频率/角色投票未变成现实概率；范围未被称统计置信区间
+- [ ] DMI参数/数值/时点；+DI/-DI为方向，ADX为强度，ADX上升不等于上涨
+- [ ] DMI未单独触发买卖，已与MA20/40、结构和量能验证
+- [ ] 期权按价格×时间×IV；无概率依据时EV=N/A；1−Delta禁用
+- [ ] 明确实际执行模式；文件导入成功不被声称MiroFish推演成功
+- [ ] 原预测与修订保留；输入哈希/版本/下次验证齐备；无测试通过即超额收益宣称

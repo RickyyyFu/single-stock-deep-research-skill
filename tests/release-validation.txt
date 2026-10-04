@@ -1,0 +1,126 @@
+single-stock-deep-research v3.5.0 — engineering validation
+Executed: 2026-10-04T10:32:20.004056+00:00
+Python: 3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]
+Command: python -m unittest discover -s tests -v
+Scope: synthetic arithmetic, data contracts, import quarantine, package invariants, and retained documentation tests.
+No market data calls, no LLM or Zep calls, no MiroFish run, no predictive backtest.
+GitHub Actions first attempt failed before any steps; this record reports local execution only.
+
+test_13f_delay (test_contracts.Contracts.test_13f_delay) ... ok
+test_adx_not_direction (test_contracts.Contracts.test_adx_not_direction) ... ok
+test_call_oi_not_proof (test_contracts.Contracts.test_call_oi_not_proof) ... ok
+test_crowding_not_intrinsic (test_contracts.Contracts.test_crowding_not_intrinsic) ... ok
+test_dmi_default_period (test_contracts.Contracts.test_dmi_default_period) ... ok
+test_dmi_direction_strength_split (test_contracts.Contracts.test_dmi_direction_strength_split) ... ok
+test_dmi_not_standalone_signal (test_contracts.Contracts.test_dmi_not_standalone_signal) ... ok
+test_fuel_trigger (test_contracts.Contracts.test_fuel_trigger) ... ok
+test_gex_assumption (test_contracts.Contracts.test_gex_assumption) ... ok
+test_long_unwind (test_contracts.Contracts.test_long_unwind) ... ok
+test_missing_unknown (test_contracts.Contracts.test_missing_unknown) ... ok
+test_short_volume_not_float (test_contracts.Contracts.test_short_volume_not_float) ... ok
+test_si_short_volume_distinct (test_contracts.Contracts.test_si_short_volume_distinct) ... ok
+test_two_sided (test_contracts.Contracts.test_two_sided) ... ok
+test_allowlist_excludes_unlisted_private_file (test_packaging.PackagingTests.test_allowlist_excludes_unlisted_private_file) ... ok
+test_allowlist_rejects_parent_traversal (test_packaging.PackagingTests.test_allowlist_rejects_parent_traversal) ... ok
+test_archive_has_manifest_and_one_root (test_packaging.PackagingTests.test_archive_has_manifest_and_one_root) ... ok
+test_bundle_validation (test_packaging.PackagingTests.test_bundle_validation) ... ok
+test_check_does_not_create_missing_zip (test_packaging.PackagingTests.test_check_does_not_create_missing_zip) ... ok
+test_no_old_zips_caches_or_live_data (test_packaging.PackagingTests.test_no_old_zips_caches_or_live_data) ... ok
+test_package_rejects_changed_same_version (test_packaging.PackagingTests.test_package_rejects_changed_same_version) ... ok
+test_reproducible_bytes (test_packaging.PackagingTests.test_reproducible_bytes) ... ok
+test_assumption_requires_independent_grounding (test_scenario_valuation.ValuationTests.test_assumption_requires_independent_grounding) ... ok
+test_attribution_must_be_explicit (test_scenario_valuation.ValuationTests.test_attribution_must_be_explicit) ... ok
+test_bad_sensitivity_does_not_destroy_center (test_scenario_valuation.ValuationTests.test_bad_sensitivity_does_not_destroy_center) ... ok
+test_block_is_local_to_scenario (test_scenario_valuation.ValuationTests.test_block_is_local_to_scenario) ... ok
+test_burn_not_twice (test_scenario_valuation.ValuationTests.test_burn_not_twice) ... ok
+test_capital_date_matches_target (test_scenario_valuation.ValuationTests.test_capital_date_matches_target) ... ok
+test_checkpoint_cannot_follow_target (test_scenario_valuation.ValuationTests.test_checkpoint_cannot_follow_target) ... ok
+test_cli_blocked_sensitivity_exit_two (test_scenario_valuation.ValuationTests.test_cli_blocked_sensitivity_exit_two) ... ok
+test_cli_rejects_overwrite (test_scenario_valuation.ValuationTests.test_cli_rejects_overwrite) ... ok
+test_cli_synthetic_example_success (test_scenario_valuation.ValuationTests.test_cli_synthetic_example_success) ... ok
+test_common_income_excludes_nci_and_preferred (test_scenario_valuation.ValuationTests.test_common_income_excludes_nci_and_preferred) ... ok
+test_current_intrinsic_future_rejected (test_scenario_valuation.ValuationTests.test_current_intrinsic_future_rejected) ... ok
+test_current_intrinsic_uses_research_date (test_scenario_valuation.ValuationTests.test_current_intrinsic_uses_research_date) ... ok
+test_cutoff_requires_timezone (test_scenario_valuation.ValuationTests.test_cutoff_requires_timezone) ... ok
+test_cyclic_provenance (test_scenario_valuation.ValuationTests.test_cyclic_provenance) ... ok
+test_dated_scenario_needs_path (test_scenario_valuation.ValuationTests.test_dated_scenario_needs_path) ... ok
+test_dated_target_must_be_future (test_scenario_valuation.ValuationTests.test_dated_target_must_be_future) ... ok
+test_dcf_no_quarter_as_annual (test_scenario_valuation.ValuationTests.test_dcf_no_quarter_as_annual) ... ok
+test_dcf_rejects_cashflow_before_target (test_scenario_valuation.ValuationTests.test_dcf_rejects_cashflow_before_target) ... ok
+test_discounted_financing_reduces_price (test_scenario_valuation.ValuationTests.test_discounted_financing_reduces_price) ... ok
+test_distress_not_negative_stock_price (test_scenario_valuation.ValuationTests.test_distress_not_negative_stock_price) ... ok
+test_duplicate_evidence_id (test_scenario_valuation.ValuationTests.test_duplicate_evidence_id) ... ok
+test_duplicate_json_keys_rejected (test_scenario_valuation.ValuationTests.test_duplicate_json_keys_rejected) ... ok
+test_earnings_from_operations (test_scenario_valuation.ValuationTests.test_earnings_from_operations) ... ok
+test_earnings_share_basis (test_scenario_valuation.ValuationTests.test_earnings_share_basis) ... ok
+test_fair_value_financing_invariant (test_scenario_valuation.ValuationTests.test_fair_value_financing_invariant) ... ok
+test_fcfe_rejected_in_wacc_model (test_scenario_valuation.ValuationTests.test_fcfe_rejected_in_wacc_model) ... ok
+test_fcff_discount_matches_independent_formula (test_scenario_valuation.ValuationTests.test_fcff_discount_matches_independent_formula) ... ok
+test_financing_costs_reduce_price (test_scenario_valuation.ValuationTests.test_financing_costs_reduce_price) ... ok
+test_illustrative_cannot_enter_research (test_scenario_valuation.ValuationTests.test_illustrative_cannot_enter_research) ... ok
+test_intersegment_sales_excluded (test_scenario_valuation.ValuationTests.test_intersegment_sales_excluded) ... ok
+test_invalid_ntm_date (test_scenario_valuation.ValuationTests.test_invalid_ntm_date) ... ok
+test_json_nan_rejected (test_scenario_valuation.ValuationTests.test_json_nan_rejected) ... ok
+test_margin_cannot_exceed_one (test_scenario_valuation.ValuationTests.test_margin_cannot_exceed_one) ... ok
+test_missing_condition_blocked (test_scenario_valuation.ValuationTests.test_missing_condition_blocked) ... ok
+test_missing_invalidation_blocked (test_scenario_valuation.ValuationTests.test_missing_invalidation_blocked) ... ok
+test_no_automatic_loss_tax_shield (test_scenario_valuation.ValuationTests.test_no_automatic_loss_tax_shield) ... ok
+test_no_boolean_number (test_scenario_valuation.ValuationTests.test_no_boolean_number) ... ok
+test_no_double_dilution (test_scenario_valuation.ValuationTests.test_no_double_dilution) ... ok
+test_no_duplicate_segments (test_scenario_valuation.ValuationTests.test_no_duplicate_segments) ... ok
+test_no_implicit_millions (test_scenario_valuation.ValuationTests.test_no_implicit_millions) ... ok
+test_no_infinite_input (test_scenario_valuation.ValuationTests.test_no_infinite_input) ... ok
+test_no_missing_to_zero (test_scenario_valuation.ValuationTests.test_no_missing_to_zero) ... ok
+test_no_nan (test_scenario_valuation.ValuationTests.test_no_nan) ... ok
+test_no_negative_pe (test_scenario_valuation.ValuationTests.test_no_negative_pe) ... ok
+test_no_probability_from_votes (test_scenario_valuation.ValuationTests.test_no_probability_from_votes) ... ok
+test_no_zero_shares (test_scenario_valuation.ValuationTests.test_no_zero_shares) ... ok
+test_nonpositive_terminal_fcff (test_scenario_valuation.ValuationTests.test_nonpositive_terminal_fcff) ... ok
+test_pe_basis_must_match (test_scenario_valuation.ValuationTests.test_pe_basis_must_match) ... ok
+test_pe_period_must_match (test_scenario_valuation.ValuationTests.test_pe_period_must_match) ... ok
+test_pe_rejects_losses (test_scenario_valuation.ValuationTests.test_pe_rejects_losses) ... ok
+test_positive_issuance_needs_price (test_scenario_valuation.ValuationTests.test_positive_issuance_needs_price) ... ok
+test_profit_growth_with_multiple_compression (test_scenario_valuation.ValuationTests.test_profit_growth_with_multiple_compression) ... ok
+test_published_after_cutoff_rejected (test_scenario_valuation.ValuationTests.test_published_after_cutoff_rejected) ... ok
+test_quarter_not_annual (test_scenario_valuation.ValuationTests.test_quarter_not_annual) ... ok
+test_research_does_not_claim_source_verified_by_program (test_scenario_valuation.ValuationTests.test_research_does_not_claim_source_verified_by_program) ... ok
+test_reviewed_assumption_with_primary_parent (test_scenario_valuation.ValuationTests.test_reviewed_assumption_with_primary_parent) ... ok
+test_sensitivity_not_confidence_interval (test_scenario_valuation.ValuationTests.test_sensitivity_not_confidence_interval) ... ok
+test_simulation_cannot_become_fact (test_scenario_valuation.ValuationTests.test_simulation_cannot_become_fact) ... ok
+test_simulation_cannot_supply_numeric_input (test_scenario_valuation.ValuationTests.test_simulation_cannot_supply_numeric_input) ... ok
+test_snapshot_not_overwritten (test_scenario_valuation.ValuationTests.test_snapshot_not_overwritten) ... ok
+test_sotp_date_mismatch (test_scenario_valuation.ValuationTests.test_sotp_date_mismatch) ... ok
+test_sotp_ev_bridge (test_scenario_valuation.ValuationTests.test_sotp_ev_bridge) ... ok
+test_sotp_no_mixed_equity_ev (test_scenario_valuation.ValuationTests.test_sotp_no_mixed_equity_ev) ... ok
+test_technical_level_not_valuation (test_scenario_valuation.ValuationTests.test_technical_level_not_valuation) ... ok
+test_terminal_growth_below_wacc (test_scenario_valuation.ValuationTests.test_terminal_growth_below_wacc) ... ok
+test_three_dated_scenarios (test_scenario_valuation.ValuationTests.test_three_dated_scenarios) ... ok
+test_total_economic_no_duplicate_nci (test_scenario_valuation.ValuationTests.test_total_economic_no_duplicate_nci) ... ok
+test_twelve_months_required (test_scenario_valuation.ValuationTests.test_twelve_months_required) ... ok
+test_unknown_evidence_ref (test_scenario_valuation.ValuationTests.test_unknown_evidence_ref) ... ok
+test_unknown_method_blocked (test_scenario_valuation.ValuationTests.test_unknown_method_blocked) ... ok
+test_binary_rejected (test_simulation_import.SimulationImportTests.test_binary_rejected) ... ok
+test_content_hash_preserved (test_simulation_import.SimulationImportTests.test_content_hash_preserved) ... ok
+test_empty_rejected (test_simulation_import.SimulationImportTests.test_empty_rejected) ... ok
+test_import_does_not_trust_report_claim_type (test_simulation_import.SimulationImportTests.test_import_does_not_trust_report_claim_type) ... ok
+test_instruction_is_inert_data (test_simulation_import.SimulationImportTests.test_instruction_is_inert_data) ... ok
+test_json_array_rejected (test_simulation_import.SimulationImportTests.test_json_array_rejected) ... ok
+test_json_declared_id_mismatch (test_simulation_import.SimulationImportTests.test_json_declared_id_mismatch) ... ok
+test_json_duplicate_keys (test_simulation_import.SimulationImportTests.test_json_duplicate_keys) ... ok
+test_missing_id_rejected (test_simulation_import.SimulationImportTests.test_missing_id_rejected) ... ok
+test_quarantine_only (test_simulation_import.SimulationImportTests.test_quarantine_only) ... ok
+test_size_limit (test_simulation_import.SimulationImportTests.test_size_limit) ... ok
+test_unknown_file_type (test_simulation_import.SimulationImportTests.test_unknown_file_type) ... ok
+test_capex_split (test_transition.Transition.test_capex_split) ... ok
+test_model_conflict (test_transition.Transition.test_model_conflict) ... ok
+test_real_option (test_transition.Transition.test_real_option) ... ok
+test_sotp (test_transition.Transition.test_sotp) ... ok
+test_state_tree (test_transition.Transition.test_state_tree) ... ok
+test_transaction_anchor (test_transition.Transition.test_transaction_anchor) ... ok
+
+----------------------------------------------------------------------
+Ran 111 tests in 0.084s
+
+OK
+
+Bundle validator and DEMO_CO example CLI also completed successfully.

@@ -1,0 +1,587 @@
+{
+  "schema_version": "1.0.0",
+  "input_mode": "ILLUSTRATIVE",
+  "research_id": "FICTIONAL-ENGINEERING-EXAMPLE",
+  "symbol": "DEMO_CO",
+  "currency": "USD",
+  "data_cutoff": "2026-10-04T18:00:00+08:00",
+  "evidence": [
+    {
+      "id": "synthetic-1",
+      "source_type": "ILLUSTRATIVE",
+      "claim_type": "MODEL",
+      "verification_status": "UNVERIFIED",
+      "source": "urn:example:fictional",
+      "published_at": "2026-10-04T09:00:00Z",
+      "data_as_of": "2026-10-04T09:00:00Z",
+      "parent_ids": [],
+      "limitation": "All inputs fictional; no live stock, agency or market data."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "bear",
+      "label": "虚构公司：压力参数验算，不是预测",
+      "target_date": "2027-10-04",
+      "price_kind": "DATED_SCENARIO",
+      "probability": null,
+      "conditions": [
+        "Fictional operating and capital assumptions hold."
+      ],
+      "invalidation": [
+        "Actual verified inputs differ; replace this example entirely."
+      ],
+      "path": [
+        {
+          "event": "Fictional demand remains at the assumed level.",
+          "participant": "Hypothetical customer",
+          "constraint": "Fixed budget",
+          "response": "Maintain purchases",
+          "model_variable": "segments.external.revenue",
+          "falsifier": "Verified order cancellations",
+          "observe_by": "2027-07-01"
+        }
+      ],
+      "model": {
+        "method": "earnings_multiple",
+        "applicability": "Fictional profitable company test.",
+        "earnings_basis": "GAAP",
+        "multiple_basis": "GAAP",
+        "share_basis": "diluted_weighted_average",
+        "earnings_period": "FY2027",
+        "period_months": 12,
+        "multiple_period": "FY2027",
+        "multiple_rationale": "Illustrative PE, not sourced market valuation.",
+        "consolidation": "external_only",
+        "segments": [
+          {
+            "name": "external",
+            "revenue": {
+              "value": 1000000000,
+              "unit": "USD",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            },
+            "operating_margin": {
+              "value": 0.15,
+              "unit": "ratio",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            }
+          }
+        ],
+        "net_interest_expense": {
+          "value": 20000000,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "other_pretax_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "tax_rate": {
+          "value": 0.2,
+          "unit": "ratio",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "noncontrolling_net_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "preferred_dividends": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "diluted_shares": {
+          "value": 100000000,
+          "unit": "shares",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "pe": {
+          "value": 15,
+          "unit": "multiple",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "base",
+      "label": "虚构公司：基础参数验算，不是预测",
+      "target_date": "2027-10-04",
+      "price_kind": "DATED_SCENARIO",
+      "probability": null,
+      "conditions": [
+        "Fictional operating and capital assumptions hold."
+      ],
+      "invalidation": [
+        "Actual verified inputs differ; replace this example entirely."
+      ],
+      "path": [
+        {
+          "event": "Fictional demand remains at the assumed level.",
+          "participant": "Hypothetical customer",
+          "constraint": "Fixed budget",
+          "response": "Maintain purchases",
+          "model_variable": "segments.external.revenue",
+          "falsifier": "Verified order cancellations",
+          "observe_by": "2027-07-01"
+        }
+      ],
+      "model": {
+        "method": "earnings_multiple",
+        "applicability": "Fictional profitable company test.",
+        "earnings_basis": "GAAP",
+        "multiple_basis": "GAAP",
+        "share_basis": "diluted_weighted_average",
+        "earnings_period": "FY2027",
+        "period_months": 12,
+        "multiple_period": "FY2027",
+        "multiple_rationale": "Illustrative PE, not sourced market valuation.",
+        "consolidation": "external_only",
+        "segments": [
+          {
+            "name": "external",
+            "revenue": {
+              "value": 1000000000,
+              "unit": "USD",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            },
+            "operating_margin": {
+              "value": 0.2,
+              "unit": "ratio",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            }
+          }
+        ],
+        "net_interest_expense": {
+          "value": 20000000,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "other_pretax_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "tax_rate": {
+          "value": 0.2,
+          "unit": "ratio",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "noncontrolling_net_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "preferred_dividends": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "diluted_shares": {
+          "value": 100000000,
+          "unit": "shares",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "pe": {
+          "value": 20,
+          "unit": "multiple",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        }
+      },
+      "sensitivity_models": [
+        {
+          "method": "earnings_multiple",
+          "applicability": "Fictional profitable company test.",
+          "earnings_basis": "GAAP",
+          "multiple_basis": "GAAP",
+          "share_basis": "diluted_weighted_average",
+          "earnings_period": "FY2027",
+          "period_months": 12,
+          "multiple_period": "FY2027",
+          "multiple_rationale": "Illustrative PE, not sourced market valuation.",
+          "consolidation": "external_only",
+          "segments": [
+            {
+              "name": "external",
+              "revenue": {
+                "value": 1000000000,
+                "unit": "USD",
+                "period": "FY2027",
+                "rationale": "Fictional engineering input, not a forecast.",
+                "evidence_ids": [
+                  "synthetic-1"
+                ]
+              },
+              "operating_margin": {
+                "value": 0.2,
+                "unit": "ratio",
+                "period": "FY2027",
+                "rationale": "Fictional engineering input, not a forecast.",
+                "evidence_ids": [
+                  "synthetic-1"
+                ]
+              }
+            }
+          ],
+          "net_interest_expense": {
+            "value": 20000000,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "other_pretax_income": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "tax_rate": {
+            "value": 0.2,
+            "unit": "ratio",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "noncontrolling_net_income": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "preferred_dividends": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "diluted_shares": {
+            "value": 100000000,
+            "unit": "shares",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "pe": {
+            "value": 18,
+            "unit": "multiple",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          }
+        },
+        {
+          "method": "earnings_multiple",
+          "applicability": "Fictional profitable company test.",
+          "earnings_basis": "GAAP",
+          "multiple_basis": "GAAP",
+          "share_basis": "diluted_weighted_average",
+          "earnings_period": "FY2027",
+          "period_months": 12,
+          "multiple_period": "FY2027",
+          "multiple_rationale": "Illustrative PE, not sourced market valuation.",
+          "consolidation": "external_only",
+          "segments": [
+            {
+              "name": "external",
+              "revenue": {
+                "value": 1000000000,
+                "unit": "USD",
+                "period": "FY2027",
+                "rationale": "Fictional engineering input, not a forecast.",
+                "evidence_ids": [
+                  "synthetic-1"
+                ]
+              },
+              "operating_margin": {
+                "value": 0.2,
+                "unit": "ratio",
+                "period": "FY2027",
+                "rationale": "Fictional engineering input, not a forecast.",
+                "evidence_ids": [
+                  "synthetic-1"
+                ]
+              }
+            }
+          ],
+          "net_interest_expense": {
+            "value": 20000000,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "other_pretax_income": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "tax_rate": {
+            "value": 0.2,
+            "unit": "ratio",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "noncontrolling_net_income": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "preferred_dividends": {
+            "value": 0,
+            "unit": "USD",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "diluted_shares": {
+            "value": 100000000,
+            "unit": "shares",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          },
+          "pe": {
+            "value": 22,
+            "unit": "multiple",
+            "period": "FY2027",
+            "rationale": "Fictional engineering input, not a forecast.",
+            "evidence_ids": [
+              "synthetic-1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "bull",
+      "label": "虚构公司：较强参数验算，不是预测",
+      "target_date": "2027-10-04",
+      "price_kind": "DATED_SCENARIO",
+      "probability": null,
+      "conditions": [
+        "Fictional operating and capital assumptions hold."
+      ],
+      "invalidation": [
+        "Actual verified inputs differ; replace this example entirely."
+      ],
+      "path": [
+        {
+          "event": "Fictional demand remains at the assumed level.",
+          "participant": "Hypothetical customer",
+          "constraint": "Fixed budget",
+          "response": "Maintain purchases",
+          "model_variable": "segments.external.revenue",
+          "falsifier": "Verified order cancellations",
+          "observe_by": "2027-07-01"
+        }
+      ],
+      "model": {
+        "method": "earnings_multiple",
+        "applicability": "Fictional profitable company test.",
+        "earnings_basis": "GAAP",
+        "multiple_basis": "GAAP",
+        "share_basis": "diluted_weighted_average",
+        "earnings_period": "FY2027",
+        "period_months": 12,
+        "multiple_period": "FY2027",
+        "multiple_rationale": "Illustrative PE, not sourced market valuation.",
+        "consolidation": "external_only",
+        "segments": [
+          {
+            "name": "external",
+            "revenue": {
+              "value": 1000000000,
+              "unit": "USD",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            },
+            "operating_margin": {
+              "value": 0.25,
+              "unit": "ratio",
+              "period": "FY2027",
+              "rationale": "Fictional engineering input, not a forecast.",
+              "evidence_ids": [
+                "synthetic-1"
+              ]
+            }
+          }
+        ],
+        "net_interest_expense": {
+          "value": 20000000,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "other_pretax_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "tax_rate": {
+          "value": 0.2,
+          "unit": "ratio",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "noncontrolling_net_income": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "preferred_dividends": {
+          "value": 0,
+          "unit": "USD",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "diluted_shares": {
+          "value": 100000000,
+          "unit": "shares",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        },
+        "pe": {
+          "value": 25,
+          "unit": "multiple",
+          "period": "FY2027",
+          "rationale": "Fictional engineering input, not a forecast.",
+          "evidence_ids": [
+            "synthetic-1"
+          ]
+        }
+      }
+    }
+  ]
+}

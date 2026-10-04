@@ -1,0 +1,36 @@
+name: Package reviewed v3.5.0
+on:
+  push:
+    branches: [feat/scenario-valuation-v3.5.0]
+    paths: [.github/workflows/package-v3.5.0.yml]
+permissions:
+  contents: write
+jobs:
+  package:
+    if: github.repository == 'RickyyyFu/single-stock-deep-research-skill' && github.ref == 'refs/heads/feat/scenario-valuation-v3.5.0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BRANCH: feat/scenario-valuation-v3.5.0
+    steps:
+      - name: Reproduce and commit the verified standalone archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          git clone --single-branch --branch "$BRANCH" "https://github.com/$GITHUB_REPOSITORY.git" reviewed-source
+          cd reviewed-source
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python3 -m unittest discover -s tests -v
+          python3 scripts/validate_bundle.py
+          python3 scripts/package_skill.py
+          echo '2b1a83fb7e9087e32138c4c49c0d9d8dd73aa190829ab39b60735f07fd49e29d  downloads/single-stock-deep-research-v3.5.0.zip' | sha256sum -c -
+          python3 scripts/package_skill.py --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- downloads/single-stock-deep-research-v3.5.0.zip downloads/single-stock-deep-research-v3.5.0.zip.sha256
+          if ! git diff --cached --quiet; then
+            git commit -m 'build: publish verified immutable v3.5.0 package'
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
