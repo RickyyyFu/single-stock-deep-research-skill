@@ -1,6 +1,9 @@
 name: Validate skill bundle
 on:
   workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main, feat/scenario-valuation-v3.5.0]
 permissions:
   contents: read
 jobs:
@@ -13,3 +16,13 @@ jobs:
           python-version: '3.13'
       - run: python -m unittest discover -s tests -v
       - run: python scripts/validate_bundle.py
+      - run: python scripts/package_skill.py
+      - name: Archive reviewed source
+        run: git archive --format=tar.gz --output=source-snapshot.tar.gz HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-skill-${{ github.sha }}
+          path: |
+            downloads/*.zip
+            source-snapshot.tar.gz
+          if-no-files-found: error
