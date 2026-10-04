@@ -1,6 +1,6 @@
-# Single-stock deep research · v3.4.0
+# Single-stock deep research · v3.4.1
 
-Updated: 2026-10-02. Independently maintained. [中文](README.md)
+Documentation and package updated: 2026-10-04. Research rules last updated: 2026-10-02. Independently maintained. [中文](README.md)
 
 ## Purpose and scope
 Research each specified company independently: key contradictions, five-year financials, moat, valuation, catalysts and conditional actions.
@@ -9,20 +9,23 @@ No default market-wide scan or buy ranking. Small lists are researched in input 
 
 ## Use a ZIP package (no Git required)
 
-1. [Download the ZIP package](downloads/single-stock-deep-research-v3.4.0.zip?raw=true), or select **Code → Download ZIP** on the repository page.
+1. [Download the ZIP package](downloads/single-stock-deep-research-v3.4.1.zip?raw=true) for the current packaged version. **Code → Download ZIP** downloads the entire repository instead.
 2. Upload it to an agent that can extract ZIP archives and read the bundled files.
 3. Paste this instruction and replace the task at the end:
 
 ```text
-Extract the uploaded skill archive, find and read its root SKILL.md, and confirm the skill name is single-stock-deep-research. Read the references required by the entry point and use the assets templates to complete the task. First confirm that you can access the bundled files; explicitly report any extraction or reading limitation. Mark missing data UNKNOWN/LIMITED and do not invent data.
+Extract the uploaded skill archive, read single-stock-deep-research/SKILL.md in the extracted package, and confirm the skill name is single-stock-deep-research. Read the references required by the entry point and use the assets templates to complete the task. First confirm that you can access the bundled files; explicitly report any extraction or reading limitation. Mark missing data UNKNOWN/LIMITED and do not invent data.
 Task: Run complete single-stock research for AAPL with data timestamps, key contradictions, three scenarios, crowding, action conditions and strongest counterevidence.
 ```
 
-If the agent cannot extract ZIP files, extract locally and upload the complete folder where supported, or use the platform's local skill loading mechanism. The GitHub download folder is usually `single-stock-deep-research-skill-main`; rename it to `single-stock-deep-research` if the platform requires the folder to match the skill name. Preserve all files and relative paths.
+The standalone ZIP extracts to `single-stock-deep-research/`, with `single-stock-deep-research/SKILL.md` as its entry point. **Code → Download ZIP** downloads the entire repository, usually under `single-stock-deep-research-skill-main/`, with SKILL.md at that repository root and additional maintenance files such as downloads/. Prefer the versioned skill ZIP for installation.
+
+If ZIP extraction is unavailable, extract locally and upload the required files where supported, preserving entry-point, references, and assets relationships, or place the complete skill folder in the host's supported skill directory. SKILL.md alone omits required rules and templates.
 
 An attachment lets the agent follow the bundled rules for the current task; it does not necessarily install a persistent skill. Live research requires web access, authorized data sources, or user-provided data. The package includes no market data service, credentials, or subscription.
 
-## Installation
+## Local installation (requires host skill support)
+
 ```sh
 git clone https://github.com/RickyyyFu/single-stock-deep-research-skill.git single-stock-deep-research
 ```
@@ -54,14 +57,16 @@ MIGRATION.md              # 升级与仓库迁移 / migration
 VALIDATION.md             # 验证范围与局限 / validation scope
 references/              # 研究规则 / research rules
 assets/                  # 模板、配置与证据台账 / templates and config
-scripts/validate_bundle.py
+scripts/validate_bundle.py # 包规则检查 / bundle checks
+scripts/package_skill.py  # 版本 ZIP 打包 / packaging
+downloads/                # 已发布版本包 / published ZIPs
 tests/                  # 合同测试和运行记录 / contract tests and logs
 MIGRATION-PROVENANCE.json # 来源文件校验与修改记录 / provenance
 .github/workflows/validate.yml # 自动检查 / CI
 ```
 
 ## Version maintenance
-Default branch: `main`. Use independent semantic versions; synchronize SKILL.md metadata, README, CHANGELOG and MIGRATION when changing versions. Review changes through branches and PRs; after validation, tag the intended commit with `vX.Y.Z` and publish a Release. Do not casually move published tags. `shared_rules_version` labels bundled rules, not an external runtime dependency. This migration preserves v3.4.0 and the 2026-10-02 rule update date.
+Default branch: `main`. Use independent semantic versions; synchronize SKILL.md metadata, README, CHANGELOG and MIGRATION when changing versions. Review changes through branches and PRs; after validation, tag the intended commit with `vX.Y.Z` and publish a Release. Do not casually move published tags. `shared_rules_version` labels bundled rules, not an external runtime dependency. The current distribution version is v3.4.1; research rules last changed on 2026-10-02. This release corrects documentation only.
 
 ## Tests
 Python 3; standard library only. Run from repository root:
@@ -69,10 +74,10 @@ Python 3; standard library only. Run from repository root:
 python -m unittest discover -s tests -v
 python scripts/validate_bundle.py
 ```
-Recorded output: `tests/migration-test-results.txt` and `tests/migration-validation-results.txt`. Tests verify documentation contracts and bundle integrity, not host execution, live data or investment performance. See [VALIDATION.md](VALIDATION.md).
+Historical migration output: `tests/migration-test-results.txt` and `tests/migration-validation-results.txt`. Run the commands above to validate the current version. Tests verify documentation contracts and bundle integrity, not host execution, live data or investment performance. See [VALIDATION.md](VALIDATION.md).
 
 ## Provenance
-Complete directory copied from [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research), branch `feat/equity-research-skills-v1`, commit `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe`, into the new repository root. All source files remain present; READMEs are expanded and migration records and CI are added. See [MIGRATION.md](MIGRATION.md) and MIGRATION-PROVENANCE.json. GammaLens remains unchanged.
+Complete directory copied from [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research), branch `feat/equity-research-skills-v1`, commit `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe`, into the new repository root. The migration retained the source directory and added repository documentation and checks. Subsequent changes are recorded in CHANGELOG; the provenance manifest describes the migration snapshot, not current file hashes. See [MIGRATION.md](MIGRATION.md) and MIGRATION-PROVENANCE.json. GammaLens remains unchanged.
 
 ## Maintaining versioned ZIP packages
 
