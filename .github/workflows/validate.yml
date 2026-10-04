@@ -1,6 +1,9 @@
 name: Validate skill bundle
 on:
   workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main, feat/scenario-valuation-v3.5.0]
 permissions:
   contents: read
 jobs:
@@ -13,3 +16,18 @@ jobs:
           python-version: '3.13'
       - run: python -m unittest discover -s tests -v
       - run: python scripts/validate_bundle.py
+      - run: python scripts/package_skill.py
+      - run: python scripts/package_skill.py --check
+      - name: Verify extracted installation
+        run: |
+          python -c "import zipfile; zipfile.ZipFile('downloads/single-stock-deep-research-v3.5.0.zip').extractall('/tmp/skill-check')"
+          cd /tmp/skill-check/single-stock-deep-research
+          python -m unittest discover -s tests -v
+          python scripts/validate_bundle.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-skill-${{ github.sha }}
+          path: |
+            downloads/single-stock-deep-research-v3.5.0.zip
+            downloads/single-stock-deep-research-v3.5.0.zip.sha256
+          if-no-files-found: error

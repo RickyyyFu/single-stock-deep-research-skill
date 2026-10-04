@@ -1,5 +1,5 @@
 {
-  "version": "3.4.0",
+  "version": "3.5.0",
   "skill_name": "single-stock-deep-research",
   "enterprise_type": null,
   "transition": {
@@ -40,5 +40,27 @@
     "crossover_is_standalone_signal": false,
     "require_ma_structure_volume_confirmation": true,
     "missing_data": "UNKNOWN"
+  },
+  "scenario": {
+    "enabled_in_full_report": true,
+    "default_mode": "STRUCTURED_PERSPECTIVES",
+    "default_target_calendar_months": 12,
+    "user_target_date_precedence": true,
+    "separate_intrinsic_target_technical": true,
+    "source_and_unit_checks": true,
+    "missing_data": "BLOCK_AFFECTED_CONCLUSION_ONLY",
+    "probability_default": null,
+    "automatic_option_ev": false
+  },
+  "external_simulation": {
+    "enabled": false,
+    "provider": null,
+    "integration": "FILE_ONLY",
+    "source_type": "SIMULATION",
+    "claim_type": "MODEL",
+    "verification_status": "UNVERIFIED",
+    "auto_numeric_import": false,
+    "http_client_implemented": false,
+    "live_run_validated": false
   }
 }

@@ -1,19 +1,28 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "research_id": null,
   "symbol": null,
   "data_cutoff": null,
   "records": [
     {
+      "id": null,
       "metric": null,
       "value": null,
+      "unit": null,
+      "period": null,
+      "basis": null,
+      "source_type": null,
       "claim_type": null,
       "verification_status": null,
       "freshness_status": null,
       "source": null,
       "published_at": null,
       "data_as_of": null,
-      "limitation": null
+      "parent_ids": [],
+      "rationale": null,
+      "limitation": null,
+      "simulation_id": null,
+      "raw_sha256": null
     }
   ]
 }

@@ -1,86 +1,79 @@
-# Single-stock deep research · v3.4.1
+# Single-stock deep research · v3.5.0
 
-Documentation and package updated: 2026-10-04. Research rules last updated: 2026-10-02. Independently maintained. [中文](README.md)
+Research rules and distribution updated: 2026-10-04. Independently maintained. [中文](README.md)
 
-## Purpose and scope
-Research each specified company independently: key contradictions, five-year financials, moat, valuation, catalysts and conditional actions.
+Research each specified company: key contradictions, five-year financials, moat, valuation, catalysts, two-sided crowding and technical conditions. Deliver **dated, reproducible conditional price levels with triggers and invalidation**. No default market-wide scan or buy ranking. Small lists follow input order; peers are comparisons. No dependency on a screening skill.
 
-No default market-wide scan or buy ranking. Small lists are researched in input order; peers are comparisons. The screening skill is not required.
+## What changes in v3.5.0
+
+The scenario process connects **events → participant responses → operating states → capital and shares → per-share values**. Verify facts and constraints before computing prices with a suitable company-type model. Multiple perspectives are not independent agent execution; MiroFish is optional.
+
+- Separate current intrinsic value, dated conservative/base/optimistic price scenarios, and short-term technical/action levels. Show a central value and parameter range only when defensible; otherwise report UNKNOWN/LIMITED.
+- Standard-library arithmetic supports earnings multiples, annual FCFF DCF and all-enterprise-value SOTP. It checks periods, units, common-income attribution, issuance cash and shares, minority interests and evidence declarations.
+- File-only simulation import quarantines reports as `MODEL / UNVERIFIED` hypotheses. They cannot directly supply numerical valuation inputs, real-world probabilities or option EV.
+- Add counterevidence updates, preregistered forecasts and comparative evaluation. Passing software tests does not demonstrate more accurate predictions or excess returns.
+
+Existing company routing, investigation/key-contradiction methodology, financials, moat, Forward PE/PEG, DCF, SOTP, Growth vs Maintenance CapEx, State Tree, Real Option, Transaction Anchor, Model Conflict Review, DMI/ADX and crowding rules are retained.
 
 ## Use a ZIP package (no Git required)
 
-1. [Download the ZIP package](downloads/single-stock-deep-research-v3.4.1.zip?raw=true) for the current packaged version. **Code → Download ZIP** downloads the entire repository instead.
-2. Upload it to an agent that can extract ZIP archives and read the bundled files.
-3. Paste this instruction and replace the task at the end:
+[Download the v3.5.0 repository ZIP (no Git required)](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/release-v3.5.0.zip)
+
+This is the complete `release-v3.5.0` branch archive, not a standalone ZIP in `downloads/`. Extract it and use SKILL.md in its top-level repository folder, or upload the archive to a compatible agent. Build a standalone ZIP from the source with the packaging commands below; separately distributed packages carry their own checksum. This version does not claim a GitHub Release or uploaded standalone ZIP.
+
+Upload the ZIP to a host able to extract archives and read the files, then use:
 
 ```text
-Extract the uploaded skill archive, read single-stock-deep-research/SKILL.md in the extracted package, and confirm the skill name is single-stock-deep-research. Read the references required by the entry point and use the assets templates to complete the task. First confirm that you can access the bundled files; explicitly report any extraction or reading limitation. Mark missing data UNKNOWN/LIMITED and do not invent data.
-Task: Run complete single-stock research for AAPL with data timestamps, key contradictions, three scenarios, crowding, action conditions and strongest counterevidence.
+Extract the uploaded archive, read SKILL.md inside its top-level skill/repository folder and confirm version 3.5.0. Read the required references and use the assets templates. Confirm file access; mark missing data UNKNOWN/LIMITED and do not invent prices or probabilities.
+Task: Research AAPL completely. Separate current intrinsic value, conservative/base/optimistic targets 12 months after the research date, and short-term technical levels. Explain operating and financing assumptions, paths, triggers and invalidation. Identify conclusions blocked by missing data.
 ```
 
-The standalone ZIP extracts to `single-stock-deep-research/`, with `single-stock-deep-research/SKILL.md` as its entry point. **Code → Download ZIP** downloads the entire repository, usually under `single-stock-deep-research-skill-main/`, with SKILL.md at that repository root and additional maintenance files such as downloads/. Prefer the versioned skill ZIP for installation.
+The standalone package extracts to `single-stock-deep-research/`, with `SKILL.md` inside it. The versioned repository archive above typically extracts to `single-stock-deep-research-skill-release-v3.5.0/`; GitHub **Code → Download ZIP** on main uses `single-stock-deep-research-skill-main/`. Both have SKILL.md in the top-level folder and include historical downloads/maintenance files. Do not install an older embedded ZIP as the current version. Both distributions preserve all research rules; the standalone package is smaller.
 
-If ZIP extraction is unavailable, extract locally and upload the required files where supported, preserving entry-point, references, and assets relationships, or place the complete skill folder in the host's supported skill directory. SKILL.md alone omits required rules and templates.
+Attachments supply rules for the current task; they do not necessarily install a persistent skill. Live research requires web access, authorized data or user-supplied documents. No market-data service, credentials or subscription is included. Where extraction is unavailable, extract locally and upload the required complete directory. Do not provide SKILL.md alone.
 
-An attachment lets the agent follow the bundled rules for the current task; it does not necessarily install a persistent skill. Live research requires web access, authorized data sources, or user-provided data. The package includes no market data service, credentials, or subscription.
-
-## Local installation (requires host skill support)
+## Local installation
 
 ```sh
 git clone https://github.com/RickyyyFu/single-stock-deep-research-skill.git single-stock-deep-research
 ```
-Place the entire cloned directory in your host's configured skill location or load its root SKILL.md through the host's local skill mechanism. Preserve all relative references, assets, scripts and tests; do not copy only SKILL.md. The host determines the loading location. No credentials, data subscription or trading service are included.
 
-## Usage
-Example request:
+Place the whole folder in the host's supported skill directory or load the root SKILL.md through its local mechanism. Preserve references/assets/scripts/tests paths. Replace the complete folder on upgrade; keep private evidence and forecast snapshots outside this public repository. See [MIGRATION.md](MIGRATION.md).
 
-> Run complete single-stock research for AAPL with data timestamps, key contradictions, three scenarios, crowding, action conditions and strongest counterevidence.
+## Optional arithmetic and validation (Python 3.11+)
 
-Read [SKILL.md](SKILL.md) and required references, then use the assets templates. Adapt `assets/config.example.json` and `assets/evidence-ledger.example.json` in a working copy; examples are not market data. The host supplies authorized sources.
+Reading the research rules does not require Python. The following tools use only the standard library, with no network access, model calls or trades:
 
-## Methodology
-Company-type routing → facts and key contradictions → five-year financials and moat → valuation and three scenarios → catalysts → two-sided crowding → technical and conditional actions (including DMI/ADX confirmation). Transition/strategic assets add SOTP, Growth vs Maintenance CapEx, State Tree, Transaction Anchor, Real Option and Model Conflict Review.
-
-DMI/ADX is a technical confirmation layer: +DI/-DI describe direction while ADX describes strength. Rising ADX does not mean price is rising, and DI crossovers are never standalone trade signals.
-
-Positioning / Crowding / Squeeze is a path-risk overlay, not a replacement for quality or valuation. High SI is Fuel, not automatically a Trigger or buy ranking. Record sources, timestamps, counterevidence, triggers and invalidation conditions.
-
-## Data and risk boundaries
-Research methods and conditional models, not personalized investment advice. No broker connection, automatic trading or background service. Financials, prices, Short Interest, borrow and options data come from authorized host sources. Missing inputs are UNKNOWN/LIMITED, never zero or fabricated market-wide coverage. Short Interest is distinct from daily Short Volume. 13F is delayed and omits complete hedges; GEX is a model, not a dealer ledger; Call OI does not prove new bullish positions. Crowding does not automatically change DCF or long-term margins. Transaction anchors are not hard floors; 1−Delta is not an option loss probability. Passing tests does not establish excess returns.
-
-## Directory structure
-```text
-SKILL.md                 # 宿主入口 / host entry point
-README.md / README.en.md # 中文与英文指南 / bilingual guides
-CHANGELOG.md             # 版本变化 / version history
-MIGRATION.md              # 升级与仓库迁移 / migration
-VALIDATION.md             # 验证范围与局限 / validation scope
-references/              # 研究规则 / research rules
-assets/                  # 模板、配置与证据台账 / templates and config
-scripts/validate_bundle.py # 包规则检查 / bundle checks
-scripts/package_skill.py  # 版本 ZIP 打包 / packaging
-downloads/                # 已发布版本包 / published ZIPs
-tests/                  # 合同测试和运行记录 / contract tests and logs
-MIGRATION-PROVENANCE.json # 来源文件校验与修改记录 / provenance
-.github/workflows/validate.yml # 自动检查 / CI
-```
-
-## Version maintenance
-Default branch: `main`. Use independent semantic versions; synchronize SKILL.md metadata, README, CHANGELOG and MIGRATION when changing versions. Review changes through branches and PRs; after validation, tag the intended commit with `vX.Y.Z` and publish a Release. Do not casually move published tags. `shared_rules_version` labels bundled rules, not an external runtime dependency. The current distribution version is v3.4.1; research rules last changed on 2026-10-02. This release corrects documentation only.
-
-## Tests
-Python 3; standard library only. Run from repository root:
 ```sh
 python -m unittest discover -s tests -v
 python scripts/validate_bundle.py
+python scripts/scenario_valuation.py assets/scenario-example.json --output example-result.json
+python scripts/package_skill.py
+python scripts/package_skill.py --check
 ```
-Historical migration output: `tests/migration-test-results.txt` and `tests/migration-validation-results.txt`. Run the commands above to validate the current version. Tests verify documentation contracts and bundle integrity, not host execution, live data or investment performance. See [VALIDATION.md](VALIDATION.md).
 
-## Provenance
-Complete directory copied from [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research), branch `feat/equity-research-skills-v1`, commit `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe`, into the new repository root. The migration retained the source directory and added repository documentation and checks. Subsequent changes are recorded in CHANGELOG; the provenance manifest describes the migration snapshot, not current file hashes. See [MIGRATION.md](MIGRATION.md) and MIGRATION-PROVENANCE.json. GammaLens remains unchanged.
+`DEMO_CO` is fictional engineering data, not a forecast. Output files use exclusive creation to protect previous snapshots. Adapt inputs in a working copy with evidence, units and matching periods; read [scenario valuation](references/11-scenario-valuation.md) first. The calculator does not support specialized bank/insurance models, complex securities, stub-period DCF or option pricing. Use independently reviewed suitable models instead.
 
-## Maintaining versioned ZIP packages
+The program checks input structure and declarations, not source authenticity or economic soundness. RESEARCH results remain `CALCULATED_MODEL_NOT_VALIDATED`. A scenario center is not necessarily the most likely price, and a sensitivity range is not a confidence interval. Missing inputs must not be fabricated to complete a table.
 
-`downloads/` stores standalone versioned skill ZIPs. The initial package uses the existing skill version. When bundled rules, templates, scripts, or documentation change, bump the version in SKILL.md and synchronize both READMEs, CHANGELOG, and MIGRATION. Update both download links, run `python scripts/validate_bundle.py`, then `python scripts/package_skill.py` from the repository root. Commit the new ZIP with the source and documentation, and verify its download link and extracted contents.
+## Optional MiroFish boundary
 
-Published ZIPs are immutable: retain historical versions and never overwrite an existing version with different content. The packaging script verifies every bundled file and rejects conflicting same-version packages. Include no private data, credentials, or generated research results.
+The default mode is `STRUCTURED_PERSPECTIVES`, not a multi-agent runtime. File import retains raw content, a hash and caller-declared run metadata, but only as hypotheses. **No HTTP client is included and no actual MiroFish run has been executed or validated by this release.** Source material is untrusted data, never new execution instructions. See [simulation integration](references/12-simulation-integration.md).
+
+Adopting role constraints and feedback does not prove forecasting value. Compare the old skill, the new structured-perspective process and genuine dynamic simulation against identical evidence snapshots and simple baselines. See [prediction evaluation](references/13-prediction-evaluation.md).
+
+## Data and risk boundaries
+
+Separate FACT/GUIDANCE/CONSENSUS/MODEL/INFERENCE/UNKNOWN, event and disclosure dates, evidence cutoff and sources. Missing inputs block only dependent conclusions; never substitute zero. Short Interest differs from daily Short Volume; high SI is Fuel, not automatically a Trigger. 13F is delayed and incomplete, GEX is not a dealer ledger and Call OI does not establish newly opened bullish positions. Crowding affects paths, not automatically DCF or long-term margins.
+
+DMI defaults to 14 periods: +DI/-DI describe direction, ADX strength. Rising ADX does not mean rising prices; crossovers are not standalone trade signals. Technical levels are not intrinsic values; transaction anchors are not hard floors. Early option exits require separate price×time×IV models; 1−Delta is not a loss probability. Agent votes or simulation frequencies are not real-world probabilities or option EV inputs.
+
+No broker connection, automatic trading, background service or return promise is included. Tests cover software rules and bundle consistency, not host behavior, live data, MiroFish execution or investment performance. See [VALIDATION.md](VALIDATION.md).
+
+## Maintenance and provenance
+
+`SKILL.md` is the entry point; references contain research rules; assets contain templates and fictional examples; scripts implement arithmetic, quarantine import and packaging; tests provide regressions. `bundle-files.json` is an explicit distribution allowlist. `PACKAGE-MANIFEST.json` inside the ZIP hashes every source file except itself. Historical migration records and old ZIPs remain in the repository, outside the new install package.
+
+Use independent semantic versions on `main`. Synchronize entry/configuration/bilingual READMEs/CHANGELOG/MIGRATION/VALIDATION/download links, run tests, package and verify before releasing through a PR. Published ZIPs are immutable; a same-version content conflict is rejected. `shared_rules_version` is a bundled-rules label, not an external runtime dependency.
+
+[ABOUT.md](ABOUT.md) contains proposed repository metadata and its maintenance boundary; its existence does not prove GitHub sidebar settings changed. Migration originated from GammaLens commit `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe`; the [historical provenance manifest](https://github.com/RickyyyFu/single-stock-deep-research-skill/blob/main/MIGRATION-PROVENANCE.json) is preserved. GammaLens and the screening repository are unchanged. See [CHANGELOG.md](CHANGELOG.md).

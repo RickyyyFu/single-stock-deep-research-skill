@@ -1,0 +1,11 @@
+single-stock-deep-research v3.5.0 — final engineering validation
+Executed: 2026-10-04T11:06:53.671738+00:00
+Python: 3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]
+Command: python -m unittest discover -s tests -v
+Result: Ran 111 tests; OK (20 retained contracts, 71 valuation/data, 12 import, 8 packaging).
+Command: python scripts/validate_bundle.py
+Result: 41 allowlisted source files validated.
+Scope: fictional arithmetic, evidence declarations, simulation quarantine, packaging and preserved research contracts.
+No market data calls, no LLM or Zep calls, no real MiroFish run, no predictive backtest.
+GitHub Actions attempts failed before executing steps; the results here are local, not remote CI.
+Distribution: README links a versioned repository branch archive. The independently generated standalone ZIP is distributed separately and is not claimed to be uploaded to GitHub downloads/.
