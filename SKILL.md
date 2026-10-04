@@ -3,13 +3,13 @@ name: single-stock-deep-research
 description: "当用户给定一个公司/股票代码或明确小清单时，逐家完整研究主要矛盾、五年财务、护城河、估值、状态跃迁/战略资产、催化、Positioning/Crowding/Squeeze、技术与条件式操作。默认不扫描市场、不做买入排名。"
 compatibility: "中文Markdown；真实财报、行情、Short Interest、借券和期权依赖宿主已授权来源。无券商连接、自动交易或后台服务。"
 metadata:
-  version: "3.4.0"
+  version: "3.4.1"
   shared_rules_version: "1.2.0"
   language: "zh-CN"
   updated: "2026-10-02"
 ---
 
-# 单标的深度研究 v3.4.0
+# 单标的深度研究 v3.4.1
 
 ## 默认任务
 只给代码即执行完整研究；明确小清单则按输入顺序逐家独立报告，不排名。同行只用于比较。

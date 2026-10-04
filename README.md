@@ -1,6 +1,6 @@
-# 单标的深度研究 · v3.4.0
+# 单标的深度研究 · v3.4.1
 
-更新日期：2026-10-02。独立维护仓库。 [English](README.en.md)
+文档与分发包更新：2026-10-04；研究规则最近更新：2026-10-02。独立维护仓库。 [English](README.en.md)
 
 ## 定位与职责边界
 对指定公司逐家研究主要矛盾、五年财务、护城河、估值、催化和条件式行动。
@@ -9,26 +9,30 @@
 
 ## 压缩包使用（无需 Git）
 
-1. 点击 [下载 ZIP 压缩包](downloads/single-stock-deep-research-v3.4.0.zip?raw=true)，保存到本地（当前版本）；**Code → Download ZIP** 可下载完整仓库。
+1. 点击 [下载 ZIP 压缩包](downloads/single-stock-deep-research-v3.4.1.zip?raw=true)，保存到本地（当前版本）；**Code → Download ZIP** 可下载完整仓库。
 2. 将 ZIP 上传给支持解压和读取包内文件的 Agent。
 3. 复制下面的启动指令，并替换最后的任务内容：
 
 ```text
-请解压我上传的技能压缩包，找到并读取根目录的 SKILL.md，确认技能名称为 single-stock-deep-research。按入口要求读取 references 中的相关规则，并使用 assets 中的模板完成任务。先确认能访问包内文件；无法解压或读取时请明确告知。缺失数据标记 UNKNOWN/LIMITED，不编造数据。
+请解压我上传的技能压缩包，读取解压后的 single-stock-deep-research/SKILL.md，确认技能名称为 single-stock-deep-research。按入口要求读取 references 中的相关规则，并使用 assets 中的模板完成任务。先确认能访问包内文件；无法解压或读取时请明确告知。缺失数据标记 UNKNOWN/LIMITED，不编造数据。
 任务：对 AAPL 执行完整单标的研究，标注所有数据时点、主要矛盾、三情景、拥挤度、行动条件和最强反证。
 ```
 
-若 Agent 无法解压 ZIP，请在本地解压后，上传完整文件夹（平台支持时），或通过平台的本地 Skill 加载方式使用。GitHub 下载的目录通常名为 `single-stock-deep-research-skill-main`；若平台要求文件夹名与技能名一致，将其改为 `single-stock-deep-research`，并保留全部文件和相对路径。
+单技能 ZIP 解压后直接得到 `single-stock-deep-research/`，入口为 `single-stock-deep-research/SKILL.md`。**Code → Download ZIP** 下载的是整个仓库，解压目录通常为 `single-stock-deep-research-skill-main/`，其中的根目录才包含 `SKILL.md`，还包括 `downloads/` 等仓库维护文件。安装单技能时优先使用上面的版本 ZIP。
+
+若 Agent 无法解压 ZIP，可在本地解压后上传所需文件（平台支持时）；保留入口、references 和 assets 的对应关系。也可将完整技能文件夹放到平台规定的技能目录。只上传 SKILL.md 会遗漏研究规则和模板。
 
 上传附件用于当前任务按包内规则执行，不一定会自动安装为长期可调用的技能。实时研究需要 Agent 能联网检索、访问已授权数据源，或读取用户提供的数据；压缩包不含行情服务、账户凭证或数据订阅。
 
-## 安装
+## 本地安装（需要宿主支持 Skill）
+
 ```sh
 git clone https://github.com/RickyyyFu/single-stock-deep-research-skill.git single-stock-deep-research
 ```
 将整个克隆目录放到所用宿主支持的 Skill 目录，或按宿主的本地 Skill 加载方式加载根目录的 `SKILL.md`。不要只复制 SKILL.md；保持 references、assets、scripts、tests 的相对路径。宿主加载位置由宿主配置决定。本包不含账户凭证、数据订阅或交易服务。
 
 ## 使用
+
 示例请求：
 
 > 对 AAPL 执行完整单标的研究，标注所有数据时点、主要矛盾、三情景、拥挤度、行动条件和最强反证。
@@ -54,25 +58,28 @@ MIGRATION.md              # 升级与仓库迁移 / migration
 VALIDATION.md             # 验证范围与局限 / validation scope
 references/              # 研究规则 / research rules
 assets/                  # 模板、配置与证据台账 / templates and config
-scripts/validate_bundle.py
+scripts/validate_bundle.py # 包规则检查 / bundle checks
+scripts/package_skill.py  # 版本 ZIP 打包 / packaging
+downloads/                # 已发布版本包 / published ZIPs
 tests/                  # 合同测试和运行记录 / contract tests and logs
 MIGRATION-PROVENANCE.json # 来源文件校验与修改记录 / provenance
 .github/workflows/validate.yml # 自动检查 / CI
 ```
 
 ## 版本维护
-默认分支 `main`；独立使用语义版本号，修改后同步 SKILL.md metadata、README、CHANGELOG 与 MIGRATION。建议通过分支和 PR 评审；测试通过后为对应提交创建不可随意移动的 `vX.Y.Z` tag，并发布 Release。`shared_rules_version` 只是本包规则的版本标识，规则已随包提供，无跨仓库运行时依赖。当前版本和规则更新日期保留为 v3.4.0 / 2026-10-02。
+默认分支 `main`；独立使用语义版本号，修改后同步 SKILL.md metadata、README、CHANGELOG 与 MIGRATION。建议通过分支和 PR 评审；测试通过后为对应提交创建不可随意移动的 `vX.Y.Z` tag，并发布 Release。`shared_rules_version` 只是本包规则的版本标识，规则已随包提供，无跨仓库运行时依赖。当前分发版本为 v3.4.1；研究规则最近更新于2026-10-02，本次仅修正文档。
 
 ## 测试
+
 Python 3，测试和 validator 仅用标准库；从仓库根目录运行：
 ```sh
 python -m unittest discover -s tests -v
 python scripts/validate_bundle.py
 ```
-完整输出见 `tests/migration-test-results.txt` 与 `tests/migration-validation-results.txt`。测试覆盖文档合同和包完整性，不覆盖宿主行为、实时数据或投资收益，详见 [VALIDATION.md](VALIDATION.md)。
+迁移时的历史检查输出见 `tests/migration-test-results.txt` 与 `tests/migration-validation-results.txt`；当前版本请运行上述命令。测试覆盖文档合同和包完整性，不覆盖宿主行为、实时数据或投资收益，详见 [VALIDATION.md](VALIDATION.md)。
 
 ## 迁移来源
-从 [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research) 的 `feat/equity-research-skills-v1` 分支、提交 `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe` 复制完整目录到仓库根目录。原文件全部保留，README 扩充，迁移记录和 CI 新增；详见 [MIGRATION.md](MIGRATION.md) 和来源校验清单。GammaLens 未修改。
+从 [GammaLens](https://github.com/RickyyyFu/GammaLens/tree/2c2de5790f93a698b25b31660bc5c5fe1ea97dbe/skills/single-stock-deep-research) 的 `feat/equity-research-skills-v1` 分支、提交 `2c2de5790f93a698b25b31660bc5c5fe1ea97dbe` 复制完整目录到仓库根目录。迁移时保留源目录文件并新增仓库说明与检查配置；后续改动见 CHANGELOG。迁移清单记录的是迁移时的校验值，详见 [MIGRATION.md](MIGRATION.md) 和来源校验清单。GammaLens 未修改。
 
 ## 维护版本压缩包
 
