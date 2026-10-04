@@ -17,16 +17,18 @@
 
 ## 压缩包使用（无需 Git）
 
-[下载 v3.5.0 单技能 ZIP](downloads/single-stock-deep-research-v3.5.0.zip?raw=true) · [SHA256 校验](downloads/single-stock-deep-research-v3.5.0.zip.sha256?raw=true)
+[下载 v3.5.0 仓库 ZIP（无需 Git）](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/release-v3.5.0.zip)
+
+该链接下载版本分支 `release-v3.5.0` 的完整仓库；不是 `downloads/` 中的单技能 ZIP。解压后直接使用顶层目录里的 SKILL.md，或上传给支持解压的 Agent。单技能 ZIP 可用下方打包命令从源码生成；单独分发包的哈希见随包校验文件。本版本不声称 GitHub Release 或单技能 ZIP 已上传。
 
 上传 ZIP 给支持解压并读取包内文件的 Agent，使用：
 
 ```text
-请解压技能压缩包，读取 single-stock-deep-research/SKILL.md，确认版本为 3.5.0。按入口读取必需 references，使用 assets 模板。先确认文件可读；缺数据标 UNKNOWN/LIMITED，不编造价格或概率。
+请解压技能压缩包，在解压后的顶层技能/仓库目录读取 SKILL.md，确认版本为 3.5.0。按入口读取必需 references，使用 assets 模板。先确认文件可读；缺数据标 UNKNOWN/LIMITED，不编造价格或概率。
 任务：对 AAPL 执行完整研究。分别列出当前内在价值、研究日后12个月的保守/基准/乐观目标价、短期技术位。每个情景写经营及融资假设、形成过程、触发和失效条件；数据不足时说明哪一部分不能计算。
 ```
 
-单技能 ZIP 解压后为 `single-stock-deep-research/`，入口是该目录内的 `SKILL.md`。GitHub **Code → Download ZIP** 下载的是整个仓库，通常解压为 `single-stock-deep-research-skill-main/`，入口在仓库根目录，额外含历史 `downloads/` 等维护文件。安装优先使用带版本的单技能 ZIP。
+单技能 ZIP 解压后为 `single-stock-deep-research/`，入口是该目录内的 `SKILL.md`。上方版本仓库 ZIP 通常解压为 `single-stock-deep-research-skill-release-v3.5.0/`，GitHub **Code → Download ZIP** 的 main 快照通常为 `single-stock-deep-research-skill-main/`；入口都在顶层仓库目录，额外含历史 `downloads/` 等维护文件。不要把旧版本 ZIP 当作本次版本。两种包均保留完整研究规则，单技能包更精简。
 
 上传附件仅为当前任务提供规则，不一定自动安装成持久技能。宿主必须能够联网或读取用户提供的真实资料；本包不含行情服务、账户凭证或订阅。无法解压时，在本地解压并上传完整所需目录；不要只上传 SKILL.md。
 

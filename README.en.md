@@ -17,16 +17,18 @@ Existing company routing, investigation/key-contradiction methodology, financial
 
 ## Use a ZIP package (no Git required)
 
-[Download the v3.5.0 standalone skill ZIP](downloads/single-stock-deep-research-v3.5.0.zip?raw=true) · [SHA256 checksum](downloads/single-stock-deep-research-v3.5.0.zip.sha256?raw=true)
+[Download the v3.5.0 repository ZIP (no Git required)](https://github.com/RickyyyFu/single-stock-deep-research-skill/archive/refs/heads/release-v3.5.0.zip)
+
+This is the complete `release-v3.5.0` branch archive, not a standalone ZIP in `downloads/`. Extract it and use SKILL.md in its top-level repository folder, or upload the archive to a compatible agent. Build a standalone ZIP from the source with the packaging commands below; separately distributed packages carry their own checksum. This version does not claim a GitHub Release or uploaded standalone ZIP.
 
 Upload the ZIP to a host able to extract archives and read the files, then use:
 
 ```text
-Extract the uploaded archive, read single-stock-deep-research/SKILL.md and confirm version 3.5.0. Read the required references and use the assets templates. Confirm file access; mark missing data UNKNOWN/LIMITED and do not invent prices or probabilities.
+Extract the uploaded archive, read SKILL.md inside its top-level skill/repository folder and confirm version 3.5.0. Read the required references and use the assets templates. Confirm file access; mark missing data UNKNOWN/LIMITED and do not invent prices or probabilities.
 Task: Research AAPL completely. Separate current intrinsic value, conservative/base/optimistic targets 12 months after the research date, and short-term technical levels. Explain operating and financing assumptions, paths, triggers and invalidation. Identify conclusions blocked by missing data.
 ```
 
-The standalone package extracts to `single-stock-deep-research/`, with `SKILL.md` inside it. GitHub **Code → Download ZIP** instead exports the entire repository, typically under `single-stock-deep-research-skill-main/`, including historical downloads and maintenance files. Prefer the versioned standalone ZIP for installation.
+The standalone package extracts to `single-stock-deep-research/`, with `SKILL.md` inside it. The versioned repository archive above typically extracts to `single-stock-deep-research-skill-release-v3.5.0/`; GitHub **Code → Download ZIP** on main uses `single-stock-deep-research-skill-main/`. Both have SKILL.md in the top-level folder and include historical downloads/maintenance files. Do not install an older embedded ZIP as the current version. Both distributions preserve all research rules; the standalone package is smaller.
 
 Attachments supply rules for the current task; they do not necessarily install a persistent skill. Live research requires web access, authorized data or user-supplied documents. No market-data service, credentials or subscription is included. Where extraction is unavailable, extract locally and upload the required complete directory. Do not provide SKILL.md alone.
 

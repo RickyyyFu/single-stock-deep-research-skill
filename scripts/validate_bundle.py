@@ -33,8 +33,8 @@ def validate(root=ROOT):
         if version not in files[filename].decode('utf-8'):
             raise ValueError(f'missing current version in {filename}')
     for filename in ['README.md', 'README.en.md']:
-        if f'downloads/{name}-v{version}.zip?raw=true' not in files[filename].decode('utf-8'):
-            raise ValueError(f'incorrect current ZIP link in {filename}')
+        if f'archive/refs/heads/release-v{version}.zip' not in files[filename].decode('utf-8'):
+            raise ValueError(f'incorrect versioned repository ZIP link in {filename}')
     text = '\n'.join(value.decode('utf-8') for key, value in files.items() if key.endswith('.md'))
     for word in ['Short Interest', 'Short Volume', '13F', 'GEX', 'Fuel', 'Trigger', 'Long unwind',
                  'two_sided_crowded', 'DMI', '+DI', '-DI', 'ADX上升不等于上涨', 'Model Conflict Review',
